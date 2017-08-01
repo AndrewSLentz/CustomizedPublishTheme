@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>{{ page_title }}</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="theme.scss" type="text/css">
+  <link rel="stylesheet" href="custom.scss" type="text/css">
+  <link rel="stylesheet" href="tablet-and-desktop.scss" type="text/css" media="screen and (min-width: 768px)">
+
+  <!-- because ie8 ignores media queries, we need this -->
+  <!--[if IE 8]>
+    <link rel="stylesheet" href="tablet-and-desktop.scss" type="text/css">
+  <![endif]-->
+
+
+  <!--[if IE]>
+  <link rel="stylesheet" href="ie.scss" type="text/css">
+  <![endif]-->
+
+  {{ content_for_header }}
+
+  <script type="text/javascript">
+    NB.appConfig.userIsLoggedIn = {{request.logged_in?}};
+  </script>
+
+  <script type="text/javascript" src="jquery.ui.effect.min.js"></script>
+<script type="text/javascript" src="jquery.ui.effect-slide.min.js"></script>
+<script type="text/javascript" src="staged-donations.js"></script>
+
+  <link href='//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic|Oswald:400,300,700|Lato:400,700,400italic,700italic|Bree+Serif|Josefin+Sans:700|Bitter:400,700,400italic|Open+Sans:400italic,700italic,400,700,800' rel='stylesheet' type='text/css'>
+
+</head>
+<body class="aware-theme v2-theme {{ page.page_class_name }} js {% if site.has_background_image? %}with-background{% endif %}">
+  {% if site.has_header_image? %}
+    <div class="site-header" style="background: url({{ site.header_image_url_1026 }}) center no-repeat;">
+      <div class="width-container">
+        <div class="site-subheadline">
+          {{ site.subheadline }}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  <div id="pattern" class="pattern">
+    <div class="wrap" id="wrap">
+      <div id="body" class="page-{{ request.template | replace: '_', '-' }}">
+        
+        {% if request.logged_in? == false %}
+
+          <section class="preheader clearfix">
+
+            <div class="subscribe_form">{% include "preheader_email_signup" with site.signup_page %}</div>
+
+        {% endif %}
+            
+        	</section>
+
+        <div class="header-container clearfix">
+          <div class="width-container clearfix flexed">
+
+            <div class="tablet-visible">
+              {% include "nav" %}
+            </div>
+
+            {% if site.has_meta_image? %}
+              <div class="site-logo">
+                <header><a href="/"><img src="{{ site.meta_image_url }}"></a></header>
+              </div>
+            {% else %}
+              <header>
+                <h1 class="title"><a href="/">{{ site.long_name }}</a></h1>
+              </header>
+            {% endif %}
+
+            <div class="header-signup desktop-visible">             
+            </div>
+            <div class="social-links">
+            	<a style="font-size: 2.5rem;" class="icon-facebook-squared" href="{{ site.broadcaster.facebook_page_profile_url }}"></a>
+            	<a style="font-size: 2.5rem;" class="icon-twitter-squared" href="{{ site.broadcaster.twitter_profile_url }}"></a>
+            </div>
+
+          </div>
+          <!-- .width-container -->
+        </div>
+        <!-- .header-container -->
+
+        <div class="nav-container desktop-visible">
+          <div class="width-container clearfix">
+              {% include "nav" %}
+          </div>
+        </div>
+
+
+        {% if page.features_count > 0 %}
+          <div class="width-container">
+           {% include "features" %}
+          </div>
+        {% endif %}
+        
+        {% include "join_donate_widget" %}
+
+        <div class="main-container" id="middle">
+          <div class="main width-container clearfix">
+
+            {% if request.is_sidebar? %}
+            {% include "columns_2" %}
+            {% else %}
+            {% include "columns_1" %}
+            {% endif %}
+
+          </div>
+          <!-- .main -->
+        </div>
+        <!-- .main-container -->
+
+        <footer>
+          <div class="width-container clearfix">
+
+            {{ content_for_footer }}
+
+            <div class="row-fluid">
+
+              <div class="span5 footer-left">
+        
+              </div>
+              <div class="span7 footer-right flexFoot">
+                <!-- The NationBuilder link below is required. If it is removed, we may add it back ourselves.
+                     You can style it or move it in different ways, but please leave it in the footer. -->
+                <p style="margin:0;">Created with <a href="http://nationbuilder.com/">NationBuilder</a> by <a href="http://www.bigriverwebdesign.com/">Big River Web Design</a> and <a href="http://www.alumninations.com">Alumni Nations</a>.</p>
+              </div>
+
+            </div>
+
+          </div>
+          <!-- .width-container -->
+        </footer>
+
+      </div>
+      <!-- #body -->
+    </div>
+    <!-- #wrap -->
+  </div>
+  <!-- #pattern -->
+
+  {% if request.current_user.is_intern? %}
+    {% include "cp_nav" %}
+  {% endif %}
+
+{% if site.has_background_image? %}
+  <!--[if lt IE 9]>
+  <script type="text/javascript" src="/javascripts/jquery.backstretch.min.js"></script>
+  <script type="text/javascript">
+    jQuery.backstretch("{{ site.background_image_url }}", {speed: 0});
+  </script>
+  <![endif]-->
+  <style>
+    body {
+      background: url('{{ site.background_image_url }}') no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+</style>
+{% endif %}
+
+<script type="text/javascript">
+  function pollFBCommentBox(widget) {
+    var fbCommentBoxTimer = window.setInterval(function() {
+      if($(widget).height() < 100) {
+        $(widget).removeClass('comment-box-active');
+        window.clearInterval(fbCommentBoxTimer);
+      }
+    }, 1000);
+  }
+  FB.Event.subscribe('edge.create', function(href, widget) {
+    $(widget).addClass('comment-box-active');
+    pollFBCommentBox(widget);
+  });
+  FB.Event.subscribe('edge.remove', function(href, widget) {
+    $(widget).removeClass('comment-box-active');
+  });
+</script>
+
+</body>
+</html>
+

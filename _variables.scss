@@ -1,0 +1,129 @@
+//* theme style specific variables *//
+
+// background images
+
+$background-texture: "paper.jpg";
+$header-texture: "header-green.jpg";
+
+//* theme.scss variables *//
+
+// headline font
+$headline-font: "Oswald", sans-serif;
+$title-font-weight: 700;
+
+// alternative headline font
+$headline-font-alt: "Oswald", sans-serif;
+
+// main font
+$font: "Droid Serif", serif;
+
+$turquoise: #53cfd7;
+$grey: #ccc;
+$ltgrey: #f2f2f2;
+$charcoal: #656565;
+$red: #d41116;
+$green: #619114;
+$facebook: #3b5998;
+$twitter: #00aced;
+$header-color: #fff;
+$header-text-color: #000;
+$onecolumn-bg: #fff;
+$twocolumn-color: #000;
+
+$theme-color-1: $turquoise;
+$theme-color-2: #000;
+$theme-color-3: $grey;
+$theme-color-4: $charcoal;
+
+//general site settings
+$site-bg: #fff;
+$site-color: #000;
+$desktop-site-bg: #fff;
+$desktop-site-color: #000;
+$onecolumn-bg: #fff;
+$twocolumn-color: #000;
+$footer-bg: #000;
+$headline-weight: 700;
+$check_radio_sheet: url(check_radio_sheet.png);
+$progress: $theme-color-4;
+$headline-transform: uppercase;
+$opaque-bg-rgb: rgb(255, 255, 255);
+$opaque-bg-rgba: rgba(255, 255, 255, 0.8);
+
+$onecolumn-container-padding: 50px 30px;
+$onecolumn-container-border: 1px solid $theme-color-3;
+
+
+//blog share bar
+$share-bar-bg: $grey;
+$icon-button-bg: $theme-color-4;
+$icon-button-border: 0;
+$icon-button-color: #fff;
+
+// blog byline and follow buttons
+$byline-image-border: #fff;
+$delete: $red;
+$delete-border: 2px solid $red;
+$follow: $charcoal;
+$follow-color: #fff;
+$follow-border: 2px solid #fff;
+
+// page features
+$flex-background: transparent;
+$flex-border: 3px solid #fff;
+$flex-color: #fff;
+
+$nav-hover: $turquoise;
+$nav-hover-color: #000;
+$nav-background: #000;
+$nav-color: #fff;
+$nav-container-border: 0;
+
+$headline-transform: uppercase;
+
+// supporter nav buttons
+$supporter-nav-button-one: $grey;
+$supporter-nav-color-one: #000;
+$supporter-nav-button-two: $theme-color-3;
+$supporter-nav-color-two: $theme-color-4;
+$supporter-nav-button-three: #000;
+$supporter-nav-color-three: #fff;
+
+//turquoise specific fields
+$feature-border: 0;
+$supporter-nav-button-border: 0;
+
+// form input area focus color
+$theme-color-5: rgba(141, 207, 215, 0.6);
+
+// general success and error colors
+$red: #d41116;
+$green: #619114;
+
+// donation nav link
+$donation-link-background: initial;
+$donation-link-hover: initial; 
+$donation-link-float: none;
+$donation-link-line-height: 55px; 
+$donation-link-margin: 0;
+
+// footer
+$footer-embellishment: none;
+$footer-embellishment-padding: 0px;
+
+// fixed admin nav
+$cd_admin_nav_background: #62B6CF;
+$cd_admin_nav_border_color: #4b9db5;
+
+// mixins
+
+@mixin transparent-bg(){
+  /* Fallback for web browsers that doesn't support RGBa */
+  background: $opaque-bg-rgb;
+  /* RGBa with 0.6 opacity */
+  background: $opaque-bg-rgba;
+  /* For IE 5.5 - 7*/
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#CCFFFFFF, endColorstr=#CCFFFFFF);
+  /* For IE 8*/
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#CCFFFFFF, endColorstr=#CCFFFFFF)";
+}

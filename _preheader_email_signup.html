@@ -1,0 +1,13 @@
+{% if request.sorta_logged_in? %}
+	Hi <b>{{ request.current_signup.name_or_email }}.</b>
+	<div class="social">
+		<a href="/join">Click here to update your account information.</a>
+		Not {{ request.current_signup.name_or_email }}? <a href="{{ request.current_signup.logout_url }}">click here</a>.
+	</div>
+{% else %}
+
+<a class="signup" href="/join">Sign up to Stay in Touch!</a>
+or
+<a class="signup" href="/login">Click here to log in!</a>
+
+{% endif %}

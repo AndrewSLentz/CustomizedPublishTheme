@@ -1,0 +1,32 @@
+{% assign show_join = false %}
+{% assign show_donate = false %}
+{% assign show_volunteer = false %}
+
+{% for tag in page.tags %}
+	{% if tag.name == 'show_join' %}
+		{% assign show_join = true %}
+	{% endif %}
+	{% if tag.name == 'show_donate' %}
+		{% assign show_donate = true %}
+	{% endif %}
+	{% if tag.name == 'show_volunteer' %}
+		{% assign show_volunteer = true %}
+	{% endif %}
+{% endfor %}
+
+{% if page.is_homepage? == true %}
+  {% if show_join or show_donate or show_volunteer %}
+    <div class="twoCol">
+      {% if show_join %}
+        <a href="/join"> <h2 class="icon-users jdWidget">Sign up</h2></a>
+      {% endif %}
+      {% if show_donate %}
+        <a href="/give"> <h2 class="icon-credit-card-green jdWidget">Donate</h2></a>
+      {% endif %}
+      {% if show_volunteer %}
+        <a href="/volunteer"> <h2 class="icon-hand jdWidget">Volunteer</h2></a>
+      {% endif %}
+    </div>
+		<hr style="margin: 0 5rem;"/>
+  {% endif %}
+{% endif %}
