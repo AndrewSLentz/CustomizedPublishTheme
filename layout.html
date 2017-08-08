@@ -15,6 +15,7 @@
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
   <link rel="stylesheet" href="theme.scss" type="text/css">
   <link rel="stylesheet" href="custom.scss" type="text/css">
+  <link rel="stylesheet" href="custom.scss" type="text/css">
   <link rel="stylesheet" href="tablet-and-desktop.scss" type="text/css" media="screen and (min-width: 768px)">
 
   <!-- because ie8 ignores media queries, we need this -->
@@ -53,7 +54,7 @@
   <div id="pattern" class="pattern">
     <div class="wrap" id="wrap">
       <div id="body" class="page-{{ request.template | replace: '_', '-' }}">
-        
+
         {% if request.logged_in? == false %}
 
           <section class="preheader clearfix">
@@ -61,7 +62,7 @@
             <div class="subscribe_form">{% include "preheader_email_signup" with site.signup_page %}</div>
 
         {% endif %}
-            
+
         	</section>
 
         <div class="header-container clearfix">
@@ -81,7 +82,7 @@
               </header>
             {% endif %}
 
-            <div class="header-signup desktop-visible">             
+            <div class="header-signup desktop-visible">
             </div>
             <div class="social-links">
             	<a style="font-size: 2.5rem;" class="icon-facebook-squared" href="{{ site.broadcaster.facebook_page_profile_url }}"></a>
@@ -105,7 +106,7 @@
            {% include "features" %}
           </div>
         {% endif %}
-        
+
         {% include "join_donate_widget" %}
 
         <div class="main-container" id="middle">
@@ -130,7 +131,7 @@
             <div class="row-fluid">
 
               <div class="span5 footer-left">
-        
+
               </div>
               <div class="span7 footer-right flexFoot">
                 <!-- The NationBuilder link below is required. If it is removed, we may add it back ourselves.
@@ -193,4 +194,3 @@
 
 </body>
 </html>
-
