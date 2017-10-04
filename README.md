@@ -4,9 +4,9 @@ In the case of previously existing files, all default contents can be deleted an
 
 ### customized files:
 
-## edited:
+#### edited:
 layout.html, _variables.scss, tablet_and_desktop.scss, theme.scss
-## created:
+#### created:
 custom.scss, _join_donate_widget.html, _preheader_email_signup.html, apiTest.js (be sure to change "info"), directory.scss.
 
 ### customized templates:
