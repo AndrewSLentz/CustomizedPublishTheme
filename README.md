@@ -1,6 +1,7 @@
 # Customized publish theme files for Nationbuilder as used by Big River Web Design
 
-In the case of previously existing files, all default contents can be deleted and replaced by the contents of the files in this repository.
+### Instructions:
+First, switch theme to public theme "publish", then create a new custom theme, and make sure the "clone current theme" option is selected. Once the new theme is ready, create files/pages (or replace content of existing files/page templates) with the contents of the files in this repository.
 
 ### customized files:
 
