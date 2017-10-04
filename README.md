@@ -11,7 +11,7 @@ custom.scss, _join_donate_widget.html, _preheader_email_signup.html, apiTest.js 
 
 ### customized templates:
 
-homepage template (about), join page template, directory (created, also add link to faq in "content") , faq (created).
+homepage template (about), join page template, directory (created, also add link to faq in "content") , faq (created, be sure to change nation name in last paragraph; two places).
 
 ### customized settings:
 
