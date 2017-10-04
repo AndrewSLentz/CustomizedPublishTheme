@@ -15,4 +15,4 @@ homepage template (about), join page template, directory (created, also add link
 
 ### customized settings:
 
-created tags show_join, show_volunteer, show_donate and added them to homepage. Created custom fields "Maiden Name", "Graduation Year", "College" and "Major". Uncheck show sidebar in each page's settings. Change settings -> social media -> default post to proper nation name.
+created tags show_join, show_volunteer, show_donate and added them to homepage. Created custom fields "Maiden Name", "Graduation Year", "College" and "Major". Change settings -> social media -> default post to proper nation name.
