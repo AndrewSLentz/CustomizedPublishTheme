@@ -65,6 +65,15 @@ a:hover {
   color: $theme-color-1;
 }
 
+@media (max-width: 770px) {
+	div.twoCol {
+    flex-direction: column;
+    a {
+      margin: .5rem;
+    }
+  }
+}
+
 // preheader_signup
 
 .preheader {
