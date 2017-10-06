@@ -15,6 +15,16 @@ div.social-links {
   margin: 0 0 0 auto;
 }
 
+div.social-links a {
+  font-size: 2.5rem;
+}
+
+@media (max-width: 350px) {
+  div.social-links a {
+  	font-size: 1.9rem;
+  }
+}
+
 // Footer
 
 div.flexFoot {
